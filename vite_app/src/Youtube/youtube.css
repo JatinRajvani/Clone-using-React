@@ -103,6 +103,11 @@ color: white;
     border-bottom: 1px solid gray;
     padding-bottom: 3vh; 
 }
+.mainfour>h3{
+    opacity: 0.5;
+    color: White;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .subfour{
     display: flex;
     flex-direction: row;
@@ -138,11 +143,14 @@ padding-bottom: 2vh;
 }
 .searchbar{
     display: flex;
-    border: 1px solid gray;
+    border: 0.1px solid gray;
+    border-radius: 10px;
     
 }
 .searchbar>input{
     /* border-radius: 5px; */
+    border-radius: 10px;
+    border: none;
     box-sizing: border-box;
     padding-top: 1vh;
     padding-bottom: 1vh;
@@ -154,6 +162,7 @@ padding-bottom: 2vh;
     font-size: large;
 }
 .subsearch{
+    border-radius:0px 10px 10px 0px;
     width: 3.5vw;
     height: 5.2.5vh;
     align-content: center;
@@ -213,15 +222,78 @@ margin-right: 2.5vh;
 /*Thirdbar*/
 .Thirdbar{
     padding-top: 3vh;
-    padding-left: 1vw;
+}
+.Mainthirdbar{
+ padding-left: 2.5vw;
 }
 .Frame1{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 1.5vw;
+    row-gap: 5vh;
+}
+
+.Part1{
+    position: relative;
+}
+
+ .subpart1{
+    top: 14.8vh;
+    position: absolute;
+color: white;
+background-color: rgb(228, 186, 147);
+opacity: 0.7;
+width: 15.7vw;
+text-align: center;
+
+ }
+
+ .subpart2{
+    opacity: 0.7;
+    top: 14.8vh;
+    position: absolute;
+color: white;
+background-color:rgb(31, 4, 16);
+width: 15.7vw;
+text-align: center;
+
+ }
+
+.Part2{
+    margin-top: 0.5vw;
+    display: flex;
+    column-gap: 1.3vh;
+}
+.Part2>div>span{
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.verify{
+    height: 2vh;
+}
+.sslogo{
+    
+    height: 4vh;
+}
+.Part2>div{
     display: flex;
     flex-direction: column;
+    row-gap: 1vh;
 }
-.Part2{
+.Part2>div>div>div{
     display: flex;
+    column-gap: 0.5vw;
 }
-.Part2>span{
+.Part2>div>div>div>span{
+    opacity: 0.5;
+    font-size: smaller;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.Lowerdisc{
+
+    font-size: smaller;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }

@@ -18,6 +18,7 @@ function Four(){
     return(
         <>
                  <div className="mainfour">
+                 <h3>SUBSCRIPTIONS</h3>
          {Data1.map((i) => (
                                  <div key={i.id} className="subfour">
                                     <img src={i.img} alt="" srcset="" className='Home' />
