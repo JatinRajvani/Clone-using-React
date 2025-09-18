@@ -10,6 +10,8 @@ body{
 .main{
     display: flex;
     flex-direction: row;
+     
+
 }
 /*Sidebar*/
 .Sidebar{
@@ -19,6 +21,9 @@ body{
     display: flex;
     flex-direction: column;
     row-gap:3vh;
+    height: fit-content;
+position: fixed;
+
 }
 .Sidebar>p{
 color: white;
@@ -27,6 +32,7 @@ color: white;
     display: flex;
     column-gap: 1vw;
     margin-left: 3vw;
+
 }
 .First>img{
     height: 4vh;  
@@ -37,28 +43,39 @@ color: white;
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
-    
 }
 #Subsecond{
-    background-color: #383838;
+
        display: flex;
        flex-direction: row;
        column-gap: 1.5vw;
        width: 16vw;
        padding-left: 3vw;
-      
+}
+#Subsecond:hover{
+    background-color: #383838;
 }
 .Subsecond{
     display: flex;
     flex-direction: row;
     column-gap: 1.5vw;
+    width: fit-content;
+}
+.hover{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5vw;
+    padding-left: 3vw;
     width: 16vw;
+}
+.hover:hover{
+    background-color:  #383838;
 }
 .subsecondmain{
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
-    padding-left: 3vw;
+    padding-left: 6.2vh;
     padding-bottom: 3vh;
     border-bottom: 1px solid gray ;
 
@@ -68,7 +85,8 @@ color: white;
 
 }
 .Homedisc{
-    height: 5.5vh;
+    padding: 1vh;
+    /* height: 5.5vh; */
     align-content: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -78,8 +96,7 @@ color: white;
 
 /*Third*/
 .mainthird{
-    width: 16vw;
-    padding-left: 3vw;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
@@ -90,8 +107,9 @@ color: white;
     display: flex;
     flex-direction: row;
     column-gap: 1.5vw;
-    width: 16vw;
+    width: fit-content;
 }
+
 
 /*Four*/
 .mainfour{
@@ -102,6 +120,7 @@ color: white;
     row-gap: 1vh;
     border-bottom: 1px solid gray;
     padding-bottom: 3vh; 
+    cursor: pointer;
 }
 .mainfour>h3{
     opacity: 0.5;
@@ -122,7 +141,7 @@ color: white;
     display: flex;
     flex-direction: column;
     width: 76vw;
-    padding-left: 3vh;
+    padding-left: 47.5vh;
 }
 .Topbar{
     display: flex;
@@ -160,6 +179,7 @@ padding-bottom: 2vh;
     border-right: none;
     border-bottom: none;
     font-size: large;
+    color: white;
 }
 .subsearch{
     border-radius:0px 10px 10px 0px;
@@ -168,6 +188,7 @@ padding-bottom: 2vh;
     align-content: center;
     background-color:rgb(50, 50, 50) ;
     text-align: center;
+    cursor: pointer;
 }
 .searchicon{
     height: 5.05vh;
@@ -222,15 +243,19 @@ margin-right: 2.5vh;
 /*Thirdbar*/
 .Thirdbar{
     padding-top: 3vh;
+
 }
 .Mainthirdbar{
  padding-left: 2.5vw;
+ overflow-x: hidden;
+
 }
 .Frame1{
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 1.5vw;
+    grid-template-columns: auto auto auto ;
+    column-gap: 3.5vw;
     row-gap: 5vh;
+    width: 28vw;
 }
 
 .Part1{
@@ -273,8 +298,8 @@ text-align: center;
     height: 2vh;
 }
 .sslogo{
-    
     height: 4vh;
+    border-radius: 50px;
 }
 .Part2>div{
     display: flex;
@@ -296,4 +321,76 @@ text-align: center;
     font-size: smaller;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    /* height: 4.7vh; */
+    /* overflow-y: hidden; */
 }
+
+/*Pop-up*/
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popupContent {
+    background: #fff;
+    padding: 5px;
+    border-radius: 2px;
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+  }
+  .lowtext{
+    color: gray;
+  }
+  /* css for loading line*/
+  .loading-line-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff0000;
+    animation: loadLine 1s linear infinite;
+    z-index: 10;
+  }
+  
+  /* Animation for the loading line */
+  @keyframes loadLine {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    100% {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+
+  .loading{
+    color: white;
+  }

@@ -20,8 +20,10 @@ function Third(){
         <div className="mainthird">
          {Data1.map((i) => (
                                  <div key={i.id} className="subthird">
+                                    <div className="hover">
                                     <img src={i.img} alt="" srcset="" className='Home' />
                                     <span className='Homedisc'>{i.title}</span>
+                                    </div>
                                  </div>
             ))}
          

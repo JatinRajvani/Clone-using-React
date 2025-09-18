@@ -29,12 +29,12 @@ function Project() {
    ]
 
    const Data5 = [
-      { id: 1, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image9.png?raw=true", title: 'Weekly Motivation' },
-      { id: 2, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image8.png?raw=true", title: 'Meditation Self' },
-      { id: 3, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image7.png?raw=true", title: 'Words beyond action...' },
-      { id: 4, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image6.png?raw=true", title: 'The Alexa Show' },
-      { id: 5, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image5.png?raw=true", title: 'The Stories of Ma..' },
-      { id: 6, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image10.png?raw=true", title: 'Motivational Daily b...' },
+      { id: 1, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image9.png?raw=true", title: 'Weekly Motivation',title2:"Ben Ina Scott" },
+      { id: 2, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image8.png?raw=true", title: 'Meditation Self',title2:"Ibn Hussain Aleen" },
+      { id: 3, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image7.png?raw=true", title: 'Words beyond action',title2:"Samuel Scott" },
+      { id: 4, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image6.png?raw=true", title: 'The Alexa Show',title2:"Adriana Tom" },
+      { id: 5, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image5.png?raw=true", title: 'The Stories of Ma..',title2:"Lexus" },
+      { id: 6, img: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image10.png?raw=true", title: 'Motivational Daily b...',title2:"Georgina Martha" },
    ]
 
    return (
@@ -123,7 +123,10 @@ function Project() {
                               {Data5.map((i) => (
                                  <div key={i.id} className="">
                                     <img src={i.img} alt="" srcset="" className='' />
-                                    <p className=''>{i.title}</p>
+                                      <div>
+                                      <p className=''>{i.title}</p>
+                                      <p2>{i.title2}</p2>
+                                      </div>
                                  </div>
                               ))}
 
@@ -138,9 +141,19 @@ function Project() {
 
             <div className='down'>
                <div className='uplast'>
-                  <div><img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image11.png?raw=true" alt="" />
+                  <div className='uplast1'>
+                     <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image11.png?raw=true" alt="" />
                      <p><b>Dreaming On</b><br />NEFFEX</p>
-                     <img src="" alt="" /></div>
+                     </div>
+                      <div className='uplast2'>
+                      <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/bx_bxs-heart.png?raw=true" alt="" className='greenheart' />
+                      </div>
+               </div>
+               <div className='player'>
+                 <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/Music%20Player%20Options.png?raw=true" alt="" />
+               </div>
+               <div className='player2'>
+                 <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/Right%20options.png?raw=true" alt="" />
                </div>
             </div>
          </div>

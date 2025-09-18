@@ -42,7 +42,13 @@ body{
     display: flex;
     flex-direction: row;
     column-gap: 1vw;
- 
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+.subsubchild122:hover{
+
+    background-color: #383838;
+    opacity: 0.5;
 }
 .add{
     width: 5vh;
@@ -143,27 +149,65 @@ body{
 .subchild232>div{
     padding: 15px;
     width: fit-content;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px;
   
 }
-.subchild232>div>p{
+.subchild232>div:hover{
+transform: scale(1.10);
+}
+.subchild232>div>div{
+    text-align: center;
+}
+.subchild232>div>div>p{
     color: white;
     font-size: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+.subchild232>div>div>p2{
+    color: white;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .down{
+    display: flex;
     background-color: rgb(24, 24, 24);
     color: white;
     position: sticky;
     bottom: 0%;
     padding-top: 1vh;
     padding-left: 2vh;
+    column-gap: 12vw;
 }
-.down>.uplast>div>img{
+.uplast{
+    display: flex;
+    align-content: center;
+    column-gap: 3vw;
+}
+.uplast2{
+    padding-top: 2.5vh;
+ 
+}
+.uplast1>img{
     height: 10vh;
    
 }
 .down>.uplast>div{
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
+    column-gap: 1.5vw;
+}
+.greenheart{
+    height: 5vh;
+}
+.player>img{
+    margin-left: 10vh;
+padding-top: 1.5vh;
+width: 30vw;
+}
+.player2>img{
+    padding-top: 2.5vh;
+width: 20vw;
 }

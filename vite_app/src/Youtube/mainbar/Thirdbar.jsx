@@ -1,109 +1,861 @@
-import react from "react";
-import '../youtube.css'
-import one from '../IMG/Thumbnail-8.png'
-import two from '../IMG/Thumbnail-9.png'
-import three from '../IMG/Thumbnail-10.png'
-import four from '../IMG/Thumbnail-11.png'
-import five from '../IMG/Thumbnail-4.png'
-import six from '../IMG/Thumbnail-5.png'
-import seven from '../IMG/Thumbnail-6.png'
-import eight from '../IMG/Thumbnail-7.png'
-import nine from '../IMG/Thumbnail.png'
-import ten from '../IMG/Thumbnail-1.png'
-import eleven from '../IMG/Thumbnail-2.png'
-import tewelve from '../IMG/Thumbnail-3.png'
-import a from '../IMG/Ellipse 4 (1).png'
-import b from '../IMG/Ellipse 4 (2).png'
-import c from '../IMG/Ellipse 4 (3).png'
-import d from '../IMG/Ellipse 4 (4).png'
-import e from '../IMG/Ellipse 4 (5).png'
-import f from '../IMG/Ellipse 4 (6).png'
 
-import verified from '../IMG/verified.png'
-import live from '../IMG/live.png'
-function Thirdbar() {
-  const data1 = [
-    { id:1,img: one,disc: "1Bulbuli |Coke Studio Bangla |", disc2: "Season One | Ritu Raj X Nandita", img2: a, img3: verified,lowdisc1:"Coke Srudio Bangla",lowdisc2:"1.5Mviews • 2Days ago"},
 
-    { id:1,img: two,disc: "Infinix Note 12:Amoled ", disc2: "Helio G88 Processor", img2: b, img3: verified,lowdisc1:"Atc Android ToTo Company",lowdisc2:"42Mviews • 2Days ago"},
 
-    { id:1,img: three,disc: "My First Ux Design Case Study", disc2: "This Got My First My Job", img2: c, img3: verified,lowdisc1:"Saptrashi Prakash",lowdisc2:"48kviews • 1years ago"},
+// import React, { useEffect, useState } from "react";
+// import '../youtube.css';
+// import verified from '../IMG/verified.png';
 
-    { id:2,img: four,disc: "My Mix", disc2: "",lowdisc1:"Lopendro Muna,Anupam Roy and more",cname:"subpart1",h:live},
+// function Thirdbar({ searchQuery }) {
+//   const [data, setData] = useState([]);
 
-    { id:1,img: five,disc: "UX Design-What is it?", disc2: "(From AJ&Smart)", img2: d, img3: verified,lowdisc1:" AJ&Smart",lowdisc2:"150Kviews • 3years ago"},
+//   useEffect(() => {
+//     if (!searchQuery) return; // Do nothing if no search query
 
-    { id:2,img: six,disc: "Mix-Mombati|Mohon Sharif|Dhakaiya", disc2: "Dose|Mahib Ahsan ft Anilka",lowdisc1:"Mohon Sharif,Odd Signature,Shayan",lowdisc2:"Chowdhury Amob and more",cname:"subpart2",h:live},
+//     const fetchData = async () => {
+//       try {
+       
+//         const apiKey = 'AIzaSyCg5JpFoS3Mjbl9IvnBehSb3jzFqsf4Uc0'; // Your API Key
+//         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&key=${apiKey}&type=video&maxResults=30`;
 
-    { id:1,img: seven,disc: "48 Visa Free", disc2: "World Tour", img2: e, img3: verified,lowdisc1:"Nadir On The Go",lowdisc2:"1.7Mviews • 1 years ago"},
+//         const response = await fetch(url);
+//         const result = await response.json();
 
-    { id:1,img: eight,disc: "14 Advanced Tips to design", disc2: "Faster in Figma", img2: f, img3: verified,lowdisc1:"Miziko",lowdisc2:"53Kviews • 1 years ago"},
+//         const transformedData = result.items.map(item => ({
+//           id: item.id.videoId,
+//           img: item.snippet.thumbnails.medium.url,
+//           disc: item.snippet.title,
+//           disc2: item.snippet.description,
+//           img2: 'path_to_user_image',
+//           img3: verified,
+//           lowdisc1: item.snippet.channelTitle,
+//           lowdisc2: item.snippet.publishedAt,
+//           cname: '',
+//           h: ''
+//         }));
 
-    { id:1,img: nine,disc: "UX Design-What is it?", disc2: "(From AJ&Smart)", img2: d, img3: verified,lowdisc1:" AJ&Smart",lowdisc2:"150Kviews • 3years ago"},
-    
-    { id:1,img: ten,disc: "UX Design-What is it?", disc2: "(From AJ&Smart)", img2: d, img3: verified,lowdisc1:" AJ&Smart",lowdisc2:"150Kviews • 3years ago"},
+//         setData(transformedData);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
 
-    { id:1,img: eleven,disc: "UX Design-What is it?", disc2: "(From AJ&Smart)", img2: d, img3: verified,lowdisc1:" AJ&Smart",lowdisc2:"150Kviews • 3years ago"},
+//     fetchData();
+//   }, [searchQuery]); // Refetch data whenever searchQuery changes
 
-    { id:1,img: tewelve ,disc: "UX Design-What is it?", disc2: "(From AJ&Smart)", img2: d, img3: verified,lowdisc1:" AJ&Smart",lowdisc2:"150Kviews • 3years ago"},
-  ]
-  
+//   return (
+//     <div className="Mainthirdbar">
+//       <div className="Frame1">
+//         {data.map((i) => (
+//           <div className="Part1" key={i.id}>
+//             <img src={i.img} alt="" />
+//             <div className={i.cname}>
+//               {i.h && <img src={i.h} alt="" />} {/* Display live icon if exists */}
+//             </div>
+//             <div className="Part2">
+//               <img src={i.img2} alt="" className="sslogo" />
+//               <div>
+//                 <div className="Lowerdisc">
+//                   <span>{i.disc}</span><br />
+//                   <span>{i.disc2}</span>
+//                 </div>
+//                 <div>
+//                   <div>
+//                     <span>{i.lowdisc1}</span>
+//                     <div><img src={i.img3} alt="" className="verify" /></div>
+//                   </div>
+//                   <div><span>{i.lowdisc2}</span></div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Thirdbar
+
+
+// import React, { useEffect, useState } from "react";
+// import '../youtube.css';
+// import verified from '../IMG/verified.png';
+
+// function Thirdbar({ searchQuery }) {
+//   const [data, setData] = useState([]);
+//   const [popupVisible, setPopupVisible] = useState(false);
+//   const [selectedVideoId, setSelectedVideoId] = useState(null);
+
+//   useEffect(() => {
+//     if (!searchQuery) return; // Do nothing if no search query
+
+//     const fetchData = async () => {
+//       try {
+//         const apiKey = 'AIzaSyCg5JpFoS3Mjbl9IvnBehSb3jzFqsf4Uc0'; // Your API Key
+//         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&key=${apiKey}&type=video&maxResults=30`;
+
+//         const response = await fetch(url);
+//         const result = await response.json();
+
+//         const transformedData = result.items.map(item => ({
+//           id: item.id.videoId,
+//           img: item.snippet.thumbnails.medium.url,
+//           disc: item.snippet.title,
+//           disc2: item.snippet.description,
+//           img2: item.snippet.thumbnails.default.url,
+//           img3: verified,
+//           lowdisc1: item.snippet.channelTitle,
+//           lowdisc2: item.snippet.publishedAt,
+//           cname: '',
+//           h: ''
+//         }));
+
+//         setData(transformedData);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, [searchQuery]);
+
+//   const openPopup = (videoId) => {
+//     setSelectedVideoId(videoId);
+//     setPopupVisible(true);
+//   };
+
+//   const closePopup = () => {
+//     setPopupVisible(false);
+//     setSelectedVideoId(null);
+//   };
+
+//   return (
+//     <div className="Mainthirdbar">
+//       <div className="Frame1">
+//         {data.map((i) => (
+//           <div className="Part1" key={i.id} onClick={() => openPopup(i.id)}>
+//             <img src={i.img} alt="" />
+//             <div className={i.cname}>
+//               {i.h && <img src={i.h} alt="" />}
+//             </div>
+//             <div className="Part2">
+//               <img src={i.img2} alt="" className="sslogo" />
+//               <div>
+//                 <div className="Lowerdisc">
+//                   <span>{i.disc}</span><br />
+//                   <span>{i.disc2}</span>
+//                 </div>
+//                 <div>
+//                   <div>
+//                     <span>{i.lowdisc1}</span>
+//                     <div><img src={i.img3} alt="" className="verify" /></div>
+//                   </div>
+//                   <div><span>{i.lowdisc2}</span></div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Popup Modal */}
+//       {popupVisible && selectedVideoId && (
+//         <div className="popupOverlay" onClick={closePopup}>
+//           <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+//             <button className="closeButton" onClick={closePopup}>✖</button>
+//             <iframe
+//               width="560"
+//               height="315"
+//               src={`https://www.youtube.com/embed/${selectedVideoId}`}
+//               title="YouTube video player"
+//               frameBorder="0"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//               allowFullScreen
+//             ></iframe>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default Thirdbar;
+
+/*3-part(maore button not added)*/
+
+// import React, { useEffect, useState } from "react";
+// import "../youtube.css";
+// import verified from "../IMG/verified.png";
+
+// function Thirdbar({ searchQuery, activeSection }) {
+//   const [data, setData] = useState([]);
+//   const [popupVisible, setPopupVisible] = useState(false);
+//   const [selectedVideoId, setSelectedVideoId] = useState(null);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+       
+//         const apiKey = "AIzaSyATTX5FmnehCW4VmX6haRBZNhY0VM831E4";
+//         const query = searchQuery || activeSection; // Use searchQuery if available, fallback to activeSection
+//         if (!query) return; // Don't fetch if neither query nor section exists
+
+//         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+//           query
+//         )}&key=${apiKey}&type=video&maxResults=9`;
+
+//         const response = await fetch(url);
+//         const result = await response.json();
+
+//         const transformedData = result.items.map((item) => ({
+//           id: item.id.videoId,
+//           img: item.snippet.thumbnails.medium.url,
+//           disc: item.snippet.title,
+//           disc2: item.snippet.description,
+//           img2: item.snippet.thumbnails.default.url,
+//           img3: verified,
+//           lowdisc1: item.snippet.channelTitle,
+//           lowdisc2: new Date(item.snippet.publishedAt).toDateString(), // Format publish date
+//         }));
+
+//         setData(transformedData);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, [searchQuery, activeSection]); // Refetch whenever searchQuery or activeSection changes
+
+//   const openPopup = (videoId) => {
+//     setSelectedVideoId(videoId);
+//     setPopupVisible(true);
+//   };
+
+//   const closePopup = () => {
+//     setPopupVisible(false);
+//     setSelectedVideoId(null);
+//   };
+
+//   return (
+//     <div className="Mainthirdbar">
+//       <div className="Frame1">
+//         {data.map((video) => (
+//           <div
+//             className="Part1"
+//             key={video.id}
+//             onClick={() => openPopup(video.id)}
+//           >
+//             <img src={video.img} alt={video.disc} />
+//             <div className="Part2">
+//               <img src={video.img2} alt="Channel Logo" className="sslogo" />
+//               <div>
+//                 <div className="Lowerdisc">
+//                   <span>{video.disc}</span>
+//                   <br />
+//                   <span>{video.disc2}</span>
+//                 </div>
+//                 <div>
+                  
+//                   <div>
+//                   <span>{video.lowdisc1}</span>
+//                     <img src={video.img3} alt="Verified" className="verify" />
+//                   </div>
+//                   <span className="lowtext">{video.lowdisc2}</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Popup Modal */}
+//       {popupVisible && selectedVideoId && (
+//         <div className="popupOverlay" onClick={closePopup}>
+//           <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+//             <button className="closeButton" onClick={closePopup}>
+//               ✖
+//             </button>
+//             <iframe
+//               width="560"
+//               height="315"
+//               src={`https://www.youtube.com/embed/${selectedVideoId}`}
+//               title="YouTube video player"
+//               frameBorder="0"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//               allowFullScreen
+//             ></iframe>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default Thirdbar;
+
+/*4-Part more video button added*/
+// import React, { useEffect, useState } from "react";
+// import "../youtube.css";
+// import verified from "../IMG/verified.png";
+
+// function Thirdbar({ searchQuery, activeSection }) {
+//   const [data, setData] = useState([]);
+//   const [nextPageToken, setNextPageToken] = useState(null);
+//   const [popupVisible, setPopupVisible] = useState(false);
+//   const [selectedVideoId, setSelectedVideoId] = useState(null);
+
+//   useEffect(() => {
+//     fetchData();
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [searchQuery, activeSection]); // Refetch whenever searchQuery or activeSection changes
+
+//   const fetchData = async (pageToken = null) => {
+//     try {
+//       const apiKey = "AIzaSyATTX5FmnehCW4VmX6haRBZNhY0VM831E4";
+//       const query = searchQuery || activeSection; // Use searchQuery if available, fallback to activeSection
+//       if (!query) return; // Don't fetch if neither query nor section exists
+
+//       const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+//         query
+//       )}&key=${apiKey}&type=video&maxResults=30${pageToken ? `&pageToken=${pageToken}` : ""}`;
+
+//       const response = await fetch(url);
+//       const result = await response.json();
+
+//       const transformedData = result.items.map((item) => ({
+//         id: item.id.videoId,
+//         img: item.snippet.thumbnails.medium.url,
+//         disc: item.snippet.title,
+//         disc2: item.snippet.description,
+//         img2: item.snippet.thumbnails.default.url,
+//         img3: verified,
+//         lowdisc1: item.snippet.channelTitle,
+//         lowdisc2: new Date(item.snippet.publishedAt).toDateString(), // Format publish date
+//       }));
+
+//       setData(transformedData);
+//       setNextPageToken(result.nextPageToken || null);
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   };
+
+//   const fetchMoreVideos = () => {
+//     if (nextPageToken) {
+//       fetchData(nextPageToken);
+//     }
+//   };
+
+//   const openPopup = (videoId) => {
+//     setSelectedVideoId(videoId);
+//     setPopupVisible(true);
+//   };
+
+//   const closePopup = () => {
+//     setPopupVisible(false);
+//     setSelectedVideoId(null);
+//   };
+
+//   return (
+//     <div className="Mainthirdbar">
+//       <div className="Frame1">
+//         {data.map((video) => (
+//           <div
+//             className="Part1"
+//             key={video.id}
+//             onClick={() => openPopup(video.id)}
+//           >
+//             <img src={video.img} alt={video.disc} />
+//             <div className="Part2">
+//               <img src={video.img2} alt="Channel Logo" className="sslogo" />
+//               <div>
+//                 <div className="Lowerdisc">
+//                   <span>{video.disc}</span>
+//                   <br />
+//                   <span>{video.disc2}</span>
+//                 </div>
+//                 <div>
+//                   <div>
+//                     <span>{video.lowdisc1}</span>
+//                     <img src={video.img3} alt="Verified" className="verify" />
+//                   </div>
+//                   <span className="lowtext">{video.lowdisc2}</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Load More Button */}
+//       {nextPageToken && (
+//         <button className="loadMoreButton" onClick={fetchMoreVideos}>
+//           More Videos
+//         </button>
+//       )}
+
+//       {/* Popup Modal */}
+//       {popupVisible && selectedVideoId && (
+//         <div className="popupOverlay" onClick={closePopup}>
+//           <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+//             <button className="closeButton" onClick={closePopup}>
+//               ✖
+//             </button>
+//             <iframe
+//               width="560"
+//               height="315"
+//               src={`https://www.youtube.com/embed/${selectedVideoId}`}
+//               title="YouTube video player"
+//               frameBorder="0"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//               allowFullScreen
+//             ></iframe>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default Thirdbar;
+
+/*Part-5 Infinite scrolling*/
+// import React, { useEffect, useState } from "react";
+// import "../youtube.css";
+// import verified from "../IMG/verified.png";
+
+// function Thirdbar({ searchQuery, activeSection }) {
+//   const [data, setData] = useState([]);
+//   const [nextPageToken, setNextPageToken] = useState(null);
+//   const [popupVisible, setPopupVisible] = useState(false);
+//   const [selectedVideoId, setSelectedVideoId] = useState(null);
+//   const [isLoading, setIsLoading] = useState(false);
+
+//   useEffect(() => {
+//     fetchData(); // Fetch initial data
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [searchQuery, activeSection]); // Refetch whenever searchQuery or activeSection changes
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (
+//         window.innerHeight + document.documentElement.scrollTop >=
+//           document.documentElement.offsetHeight - 100 &&
+//         !isLoading &&
+//         nextPageToken
+//       ) {
+//         fetchMoreVideos(); // Fetch more videos when scrolling near the bottom
+//       }
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, [isLoading, nextPageToken]); // Re-attach event listener whenever isLoading or nextPageToken changes
+
+//   const fetchData = async (pageToken = null) => {
+//     try {
+//       const apiKey = "AIzaSyATTX5FmnehCW4VmX6haRBZNhY0VM831E4";
+//       const query = searchQuery || activeSection; // Use searchQuery if available, fallback to activeSection
+//       if (!query) return; // Don't fetch if neither query nor section exists
+
+//       const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+//         query
+//       )}&key=${apiKey}&type=video&maxResults=30${
+//         pageToken ? `&pageToken=${pageToken}` : ""
+//       }`;
+
+//       setIsLoading(true); // Set loading state
+//       const response = await fetch(url);
+//       const result = await response.json();
+
+//       const transformedData = result.items.map((item) => ({
+//         id: item.id.videoId,
+//         img: item.snippet.thumbnails.medium.url,
+//         disc: item.snippet.title,
+//         disc2: item.snippet.description,
+//         img2: item.snippet.thumbnails.default.url,
+//         img3: verified,
+//         lowdisc1: item.snippet.channelTitle,
+//         lowdisc2: new Date(item.snippet.publishedAt).toDateString(), // Format publish date
+//       }));
+
+//       setData((prevData) => (pageToken ? [...prevData, ...transformedData] : transformedData));
+//       setNextPageToken(result.nextPageToken || null);
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     } finally {
+//       setIsLoading(false); // Reset loading state
+//     }
+//   };
+
+//   const fetchMoreVideos = () => {
+//     if (nextPageToken) {
+//       fetchData(nextPageToken);
+//     }
+//   };
+
+//   const openPopup = (videoId) => {
+//     setSelectedVideoId(videoId);
+//     setPopupVisible(true);
+//   };
+
+//   const closePopup = () => {
+//     setPopupVisible(false);
+//     setSelectedVideoId(null);
+//   };
+
+//   return (
+//     <div className="Mainthirdbar">
+//       <div className="Frame1">
+//         {data.map((video) => (
+//           <div
+//             className="Part1"
+//             key={video.id}
+//             onClick={() => openPopup(video.id)}
+//           >
+//             <img src={video.img} alt={video.disc} />
+//             <div className="Part2">
+//               <img src={video.img2} alt="Channel Logo" className="sslogo" />
+//               <div>
+//                 <div className="Lowerdisc">
+//                   <span>{video.disc}</span>
+//                   <br />
+//                   <span>{video.disc2}</span>
+//                 </div>
+//                 <div>
+//                   <div>
+//                     <span>{video.lowdisc1}</span>
+//                     <img src={video.img3} alt="Verified" className="verify" />
+//                   </div>
+//                   <span className="lowtext">{video.lowdisc2}</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {isLoading && <div className="loading">Loading more videos...</div>}
+
+//       {/* Popup Modal */}
+//       {popupVisible && selectedVideoId && (
+//         <div className="popupOverlay" onClick={closePopup}>
+//           <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+//             <button className="closeButton" onClick={closePopup}>
+//               ✖
+//             </button>
+//             <iframe
+//               width="560"
+//               height="315"
+//               src={`https://www.youtube.com/embed/${selectedVideoId}`}
+//               title="YouTube video player"
+//               frameBorder="0"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//               allowFullScreen
+//             ></iframe>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default Thirdbar;
+
+/*Part-5 Channel logo*/
+// import React, { useEffect, useState } from "react";
+// import "../youtube.css";
+// import verified from "../IMG/verified.png";
+
+// function Thirdbar({ searchQuery, activeSection }) {
+//   const [data, setData] = useState([]);
+//   const [popupVisible, setPopupVisible] = useState(false);
+//   const [selectedVideoId, setSelectedVideoId] = useState(null);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const apiKey = "AIzaSyCg5JpFoS3Mjbl9IvnBehSb3jzFqsf4Uc0";
+//         const query = searchQuery || activeSection; // Use searchQuery if available, fallback to activeSection
+//         if (!query) return; // Don't fetch if neither query nor section exists
+
+//         // Fetch video details
+//         const videoUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+//           query
+//         )}&key=${apiKey}&type=video&maxResults=15`;
+
+//         const videoResponse = await fetch(videoUrl);
+//         const videoResult = await videoResponse.json();
+
+//         // Extract channel IDs for subsequent requests
+//         const channelIds = videoResult.items.map(
+//           (item) => item.snippet.channelId
+//         );
+
+//         // Fetch channel details (logos)
+//         const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelIds.join(",")}&key=${apiKey}`;
+//         const channelResponse = await fetch(channelUrl);
+//         const channelResult = await channelResponse.json();
+
+//         // Map channel IDs to their logos
+//         const channelLogos = {};
+//         channelResult.items.forEach((channel) => {
+//           channelLogos[channel.id] = channel.snippet.thumbnails.default.url;
+//         });
+
+//         // Transform video data
+//         const transformedData = videoResult.items.map((item) => ({
+//           id: item.id.videoId,
+//           img: item.snippet.thumbnails.medium.url,
+//           disc: item.snippet.title,
+//           disc2: item.snippet.description,
+//           channelLogo: channelLogos[item.snippet.channelId],
+//           img3: verified,
+//           lowdisc1: item.snippet.channelTitle,
+//           lowdisc2: new Date(item.snippet.publishedAt).toDateString(), // Format publish date
+//         }));
+
+//         setData(transformedData);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, [searchQuery, activeSection]); // Refetch whenever searchQuery or activeSection changes
+
+//   const openPopup = (videoId) => {
+//     setSelectedVideoId(videoId);
+//     setPopupVisible(true);
+//   };
+
+//   const closePopup = () => {
+//     setPopupVisible(false);
+//     setSelectedVideoId(null);
+//   };
+
+//   return (
+//     <div className="Mainthirdbar">
+//       <div className="Frame1">
+//         {data.map((video) => (
+//           <div
+//             className="Part1"
+//             key={video.id}
+//             onClick={() => openPopup(video.id)}
+//           >
+//             <img src={video.img} alt={video.disc} />
+//             <div className="Part2">
+//               <img
+//                 src={video.channelLogo}
+//                 alt="Channel Logo"
+//                 className="sslogo"
+//               />
+//               <div>
+//                 <div className="Lowerdisc">
+//                   <span>{video.disc}</span>
+//                   <br />
+//                   {/* <span>{video.disc2}</span> */}
+//                 </div>
+//                 <div>
+//                   <div>
+//                     <span>{video.lowdisc1}</span>
+//                     <img src={video.img3} alt="Verified" className="verify" />
+//                   </div>
+//                   <span className="lowtext">{video.lowdisc2}</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Popup Modal */}
+//       {popupVisible && selectedVideoId && (
+//         <div className="popupOverlay" onClick={closePopup}>
+//           <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+//             <button className="closeButton" onClick={closePopup}>
+//               ✖
+//             </button>
+//             <iframe
+//               width="560"
+//               height="315"
+//               src={`https://www.youtube.com/embed/${selectedVideoId}`}
+//               title="YouTube video player"
+//               frameBorder="0"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//               allowFullScreen
+//             ></iframe>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default Thirdbar;
+
+import React, { useEffect, useState } from "react";
+import "../youtube.css";
+import verified from "../IMG/verified.png";
+
+function Thirdbar({ searchQuery, activeSection }) {
+  const [data, setData] = useState([]);
+  const [nextPageToken, setNextPageToken] = useState(null);
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [selectedVideoId, setSelectedVideoId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    fetchData(); // Fetch initial data
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery, activeSection]); // Refetch whenever searchQuery or activeSection changes
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop >=
+          document.documentElement.offsetHeight - 100 &&
+        !isLoading &&
+        nextPageToken
+      ) {
+        fetchMoreVideos(); // Fetch more videos when scrolling near the bottom
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isLoading, nextPageToken]); // Re-attach event listener whenever isLoading or nextPageToken changes
+
+  const fetchData = async (pageToken = null) => {
+    try {
+      const apiKey = "AIzaSyCg5JpFoS3Mjbl9IvnBehSb3jzFqsf4Uc0";
+      const query = searchQuery || activeSection; // Use searchQuery if available, fallback to activeSection
+      if (!query) return; // Don't fetch if neither query nor section exists
+
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+        query
+      )}&key=${apiKey}&type=video&maxResults=30${
+        pageToken ? `&pageToken=${pageToken}` : ""
+      }`;
+
+      setIsLoading(true); // Set loading state
+      const response = await fetch(url);
+      const result = await response.json();
+
+      const transformedData = await Promise.all(
+        result.items.map(async (item) => {
+          const channelId = item.snippet.channelId;
+          const channelLogo = await fetchChannelLogo(channelId, apiKey);
+          return {
+            id: item.id.videoId,
+            img: item.snippet.thumbnails.medium.url,
+            disc: item.snippet.title,
+            disc2: item.snippet.description,
+            img2: channelLogo,
+            img3: verified,
+            lowdisc1: item.snippet.channelTitle,
+            lowdisc2: new Date(item.snippet.publishedAt).toDateString(), // Format publish date
+          };
+        })
+      );
+
+      setData((prevData) => (pageToken ? [...prevData, ...transformedData] : transformedData));
+      setNextPageToken(result.nextPageToken || null);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false); // Reset loading state
+    }
+  };
+
+  const fetchChannelLogo = async (channelId, apiKey) => {
+    try {
+      const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${apiKey}`;
+      const response = await fetch(url);
+      const result = await response.json();
+
+      if (result.items && result.items.length > 0) {
+        return result.items[0].snippet.thumbnails.default.url;
+      } else {
+        return ""; // Return a placeholder or empty string if no logo found
+      }
+    } catch (error) {
+      console.error("Error fetching channel logo:", error);
+      return "";
+    }
+  };
+
+  const fetchMoreVideos = () => {
+    if (nextPageToken) {
+      fetchData(nextPageToken);
+    }
+  };
+
+  const openPopup = (videoId) => {
+    setSelectedVideoId(videoId);
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+    setSelectedVideoId(null);
+  };
+
   return (
-    <>
-      <div className="Mainthirdbar">
-        <div className="Frame1">
-         
-
-{data1.map((i) => (
-i.id==1 ?(
-<div className="Part1">
-<img src={i.img} alt="" srcset=""  />
-{/* <div className="subpart1"><img src={i.h} alt="" /></div> */}
-<div className="Part2">
-                  <img src={i.img2} alt="" className="sslogo" />
-                  <div>
-                   <div className="Lowerdisc">
-                   <span>{i.disc}</span><br />
-                   <span>{i.disc2}</span>
-                   </div>
-                    <div>
-                      <div><span>{i.lowdisc1}</span><div><img src={i.img3} alt="" className="verify"/></div></div>
-                      <div><span>{i.lowdisc2}</span></div>
-                    </div>
-                  </div>
-
+    <div className="Mainthirdbar">
+      <div className="Frame1">
+        {data.map((video) => (
+          <div
+            className="Part1"
+            key={video.id}
+            onClick={() => openPopup(video.id)}
+          >
+            <img src={video.img} alt={video.disc} />
+            <div className="Part2">
+              <img src={video.img2} alt="Channel Logo" className="sslogo" />
+              <div>
+                <div className="Lowerdisc">
+                  <span>{video.disc}</span>
+                  <br />
+                  {/* <span>{video.disc2}</span> */}
                 </div>
-
-</div>
-                       ):  
-                       
-<div className="Part1">
-<img src={i.img} alt="" srcset=""  />
-<div className={i.cname}><img src={i.h} alt="" /></div>
-<div className="Part2">
-                  <img src={i.img2} alt="" className="sslogo" />
+                <div>
                   <div>
-                   <div className="Lowerdisc">
-                   <span>{i.disc}</span><br />
-                   <span>{i.disc2}</span>
-                   </div>
-                    <div>
-                      <div><span>{i.lowdisc1}</span><div><img src={i.img3} alt="" className="verify"/></div></div>
-                      <div><span>{i.lowdisc2}</span></div>
-                    </div>
+                    <span>{video.lowdisc1}</span>
+                    <img src={video.img3} alt="Verified" className="verify" />
                   </div>
-
+                  <span className="lowtext">{video.lowdisc2}</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-</div>
+      {isLoading && <div className="loading">Loading more videos...</div>}
 
-                           
-                          ))}
-
-
+      {/* Popup Modal */}
+      {popupVisible && selectedVideoId && (
+        <div className="popupOverlay" onClick={closePopup}>
+          <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+            <button className="closeButton" onClick={closePopup}>
+              ✖
+            </button>
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${selectedVideoId}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
-      
-    </>
-  )
-} export default Thirdbar;
+      )}
+    </div>
+  );
+}
+
+export default Thirdbar;
